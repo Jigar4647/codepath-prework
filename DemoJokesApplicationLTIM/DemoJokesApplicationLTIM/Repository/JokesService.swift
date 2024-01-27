@@ -19,13 +19,7 @@ struct JokesService: JokesServiceProtocol {
             return
         }
         
-        var request = URLRequest(url: url)
-        guard let api_key = Util.getApiKeyFromKeyConfig() else {
-            completionHandler(.failure(.invalidApiID))
-            return
-        }
-        request.setValue(api_key, forHTTPHeaderField: Constants.headerField)
-
+        let request = URLRequest(url: url)
         HTTPUtility.shared.fetchData(request: request, resultType: Jokes.self) { result in
             switch result {
             case .success(let data):

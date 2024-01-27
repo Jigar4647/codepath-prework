@@ -18,6 +18,11 @@ class HTTPUtility {
         var request = request
         request.httpMethod = HttpMethod.get.rawValue
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        guard let api_key = Util.getApiKeyFromKeyConfig() else {
+            completionHandler(.failure(.invalidApiID))
+            return
+        }
+        request.setValue(api_key, forHTTPHeaderField: Constants.headerField)
         
         URLSession.shared.dataTask(with: request) { resData, httpResponse, resError in
             if resError != nil {
