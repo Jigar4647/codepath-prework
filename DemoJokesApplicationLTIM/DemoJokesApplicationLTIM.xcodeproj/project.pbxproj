@@ -9,13 +9,19 @@
 /* Begin PBXBuildFile section */
 		19B1EC812B6167F60065BC56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B1EC802B6167F60065BC56 /* AppDelegate.swift */; };
 		19B1EC832B6167F60065BC56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B1EC822B6167F60065BC56 /* SceneDelegate.swift */; };
-		19B1EC852B6167F60065BC56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B1EC842B6167F60065BC56 /* ViewController.swift */; };
+		19B1EC852B6167F60065BC56 /* JokesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B1EC842B6167F60065BC56 /* JokesViewController.swift */; };
 		19B1EC882B6167F60065BC56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19B1EC862B6167F60065BC56 /* Main.storyboard */; };
 		19B1EC8A2B6167FB0065BC56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19B1EC892B6167FB0065BC56 /* Assets.xcassets */; };
 		19B1EC8D2B6167FB0065BC56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19B1EC8B2B6167FB0065BC56 /* LaunchScreen.storyboard */; };
 		19B1EC982B6167FB0065BC56 /* DemoJokesApplicationLTIMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B1EC972B6167FB0065BC56 /* DemoJokesApplicationLTIMTests.swift */; };
 		19B1ECA22B6167FB0065BC56 /* DemoJokesApplicationLTIMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B1ECA12B6167FB0065BC56 /* DemoJokesApplicationLTIMUITests.swift */; };
 		19B1ECA42B6167FB0065BC56 /* DemoJokesApplicationLTIMUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B1ECA32B6167FB0065BC56 /* DemoJokesApplicationLTIMUITestsLaunchTests.swift */; };
+		19D8C5282B650D1E00C5FE43 /* HTTPUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D8C5272B650D1E00C5FE43 /* HTTPUtility.swift */; };
+		19D8C52B2B650D4E00C5FE43 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D8C52A2B650D4E00C5FE43 /* NetworkError.swift */; };
+		19D8C52F2B650DDA00C5FE43 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 19D8C52E2B650DDA00C5FE43 /* Localizable.strings */; };
+		19D8C5312B650E1800C5FE43 /* Localaization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D8C5302B650E1800C5FE43 /* Localaization.swift */; };
+		19D8C5342B650E6700C5FE43 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D8C5332B650E6700C5FE43 /* Extension+String.swift */; };
+		19D8C5362B650FDF00C5FE43 /* APIPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D8C5352B650FDF00C5FE43 /* APIPath.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +45,7 @@
 		19B1EC7D2B6167F60065BC56 /* DemoJokesApplicationLTIM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoJokesApplicationLTIM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19B1EC802B6167F60065BC56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19B1EC822B6167F60065BC56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		19B1EC842B6167F60065BC56 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		19B1EC842B6167F60065BC56 /* JokesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesViewController.swift; sourceTree = "<group>"; };
 		19B1EC872B6167F60065BC56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		19B1EC892B6167FB0065BC56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		19B1EC8C2B6167FB0065BC56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +55,12 @@
 		19B1EC9D2B6167FB0065BC56 /* DemoJokesApplicationLTIMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoJokesApplicationLTIMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		19B1ECA12B6167FB0065BC56 /* DemoJokesApplicationLTIMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoJokesApplicationLTIMUITests.swift; sourceTree = "<group>"; };
 		19B1ECA32B6167FB0065BC56 /* DemoJokesApplicationLTIMUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoJokesApplicationLTIMUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		19D8C5272B650D1E00C5FE43 /* HTTPUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPUtility.swift; sourceTree = "<group>"; };
+		19D8C52A2B650D4E00C5FE43 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		19D8C52E2B650DDA00C5FE43 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		19D8C5302B650E1800C5FE43 /* Localaization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localaization.swift; sourceTree = "<group>"; };
+		19D8C5332B650E6700C5FE43 /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
+		19D8C5352B650FDF00C5FE43 /* APIPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIPath.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +113,11 @@
 			children = (
 				19B1EC802B6167F60065BC56 /* AppDelegate.swift */,
 				19B1EC822B6167F60065BC56 /* SceneDelegate.swift */,
-				19B1EC842B6167F60065BC56 /* ViewController.swift */,
-				19B1EC862B6167F60065BC56 /* Main.storyboard */,
-				19B1EC892B6167FB0065BC56 /* Assets.xcassets */,
-				19B1EC8B2B6167FB0065BC56 /* LaunchScreen.storyboard */,
+				19D8C5292B650D4000C5FE43 /* Utilities */,
+				19D8C5262B650D0100C5FE43 /* Repository */,
+				19D8C5252B650BF600C5FE43 /* Controllers */,
+				19D8C5232B650BB600C5FE43 /* Storyboards */,
+				19D8C5242B650BD800C5FE43 /* Resources */,
 				19B1EC8E2B6167FB0065BC56 /* Info.plist */,
 			);
 			path = DemoJokesApplicationLTIM;
@@ -125,6 +138,75 @@
 				19B1ECA32B6167FB0065BC56 /* DemoJokesApplicationLTIMUITestsLaunchTests.swift */,
 			);
 			path = DemoJokesApplicationLTIMUITests;
+			sourceTree = "<group>";
+		};
+		19D8C5232B650BB600C5FE43 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				19B1EC862B6167F60065BC56 /* Main.storyboard */,
+				19B1EC8B2B6167FB0065BC56 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		19D8C5242B650BD800C5FE43 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				19B1EC892B6167FB0065BC56 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		19D8C5252B650BF600C5FE43 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				19B1EC842B6167F60065BC56 /* JokesViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		19D8C5262B650D0100C5FE43 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				19D8C5272B650D1E00C5FE43 /* HTTPUtility.swift */,
+				19D8C5352B650FDF00C5FE43 /* APIPath.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		19D8C5292B650D4000C5FE43 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				19D8C5322B650E5000C5FE43 /* Extensions */,
+				19D8C52D2B650D7300C5FE43 /* Localization Files */,
+				19D8C52C2B650D6A00C5FE43 /* Enums */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		19D8C52C2B650D6A00C5FE43 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				19D8C52A2B650D4E00C5FE43 /* NetworkError.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		19D8C52D2B650D7300C5FE43 /* Localization Files */ = {
+			isa = PBXGroup;
+			children = (
+				19D8C52E2B650DDA00C5FE43 /* Localizable.strings */,
+				19D8C5302B650E1800C5FE43 /* Localaization.swift */,
+			);
+			path = "Localization Files";
+			sourceTree = "<group>";
+		};
+		19D8C5322B650E5000C5FE43 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				19D8C5332B650E6700C5FE43 /* Extension+String.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19B1EC8D2B6167FB0065BC56 /* LaunchScreen.storyboard in Resources */,
+				19D8C52F2B650DDA00C5FE43 /* Localizable.strings in Resources */,
 				19B1EC8A2B6167FB0065BC56 /* Assets.xcassets in Resources */,
 				19B1EC882B6167F60065BC56 /* Main.storyboard in Resources */,
 			);
@@ -258,9 +341,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19B1EC852B6167F60065BC56 /* ViewController.swift in Sources */,
+				19D8C5282B650D1E00C5FE43 /* HTTPUtility.swift in Sources */,
+				19D8C5342B650E6700C5FE43 /* Extension+String.swift in Sources */,
+				19B1EC852B6167F60065BC56 /* JokesViewController.swift in Sources */,
 				19B1EC812B6167F60065BC56 /* AppDelegate.swift in Sources */,
 				19B1EC832B6167F60065BC56 /* SceneDelegate.swift in Sources */,
+				19D8C5312B650E1800C5FE43 /* Localaization.swift in Sources */,
+				19D8C52B2B650D4E00C5FE43 /* NetworkError.swift in Sources */,
+				19D8C5362B650FDF00C5FE43 /* APIPath.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +530,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DemoJokesApplicationLTIM/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -469,6 +558,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DemoJokesApplicationLTIM/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
