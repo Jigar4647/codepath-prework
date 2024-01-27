@@ -22,6 +22,14 @@
 		19D8C5312B650E1800C5FE43 /* Localaization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D8C5302B650E1800C5FE43 /* Localaization.swift */; };
 		19D8C5342B650E6700C5FE43 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D8C5332B650E6700C5FE43 /* Extension+String.swift */; };
 		19D8C5362B650FDF00C5FE43 /* APIPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D8C5352B650FDF00C5FE43 /* APIPath.swift */; };
+		19D8C5392B6511B100C5FE43 /* JokesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D8C5382B6511B100C5FE43 /* JokesService.swift */; };
+		19D8C53B2B6511E900C5FE43 /* JokesServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D8C53A2B6511E900C5FE43 /* JokesServiceProtocol.swift */; };
+		19D8C53E2B65129B00C5FE43 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D8C53D2B65129B00C5FE43 /* Constants.swift */; };
+		19D8C5412B6515AB00C5FE43 /* Jokes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D8C5402B6515AB00C5FE43 /* Jokes.swift */; };
+		19D8C5432B65235300C5FE43 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D8C5422B65235300C5FE43 /* Util.swift */; };
+		19D8C5462B6523AD00C5FE43 /* KeyConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19D8C5452B6523AD00C5FE43 /* KeyConfig.plist */; };
+		19D8C5492B65258800C5FE43 /* JokesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D8C5482B65258800C5FE43 /* JokesViewModel.swift */; };
+		19D8C54D2B6542D300C5FE43 /* JokesCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D8C54B2B6542D300C5FE43 /* JokesCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +69,14 @@
 		19D8C5302B650E1800C5FE43 /* Localaization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localaization.swift; sourceTree = "<group>"; };
 		19D8C5332B650E6700C5FE43 /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		19D8C5352B650FDF00C5FE43 /* APIPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIPath.swift; sourceTree = "<group>"; };
+		19D8C5382B6511B100C5FE43 /* JokesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesService.swift; sourceTree = "<group>"; };
+		19D8C53A2B6511E900C5FE43 /* JokesServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesServiceProtocol.swift; sourceTree = "<group>"; };
+		19D8C53D2B65129B00C5FE43 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		19D8C5402B6515AB00C5FE43 /* Jokes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jokes.swift; sourceTree = "<group>"; };
+		19D8C5422B65235300C5FE43 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		19D8C5452B6523AD00C5FE43 /* KeyConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = KeyConfig.plist; sourceTree = "<group>"; };
+		19D8C5482B65258800C5FE43 /* JokesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesViewModel.swift; sourceTree = "<group>"; };
+		19D8C54B2B6542D300C5FE43 /* JokesCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,8 +130,12 @@
 				19B1EC802B6167F60065BC56 /* AppDelegate.swift */,
 				19B1EC822B6167F60065BC56 /* SceneDelegate.swift */,
 				19D8C5292B650D4000C5FE43 /* Utilities */,
+				19D8C5372B65119400C5FE43 /* Protocols */,
 				19D8C5262B650D0100C5FE43 /* Repository */,
+				19D8C53F2B65159300C5FE43 /* Model */,
+				19D8C5472B65257000C5FE43 /* View Model */,
 				19D8C5252B650BF600C5FE43 /* Controllers */,
+				19D8C54A2B6542AB00C5FE43 /* Views */,
 				19D8C5232B650BB600C5FE43 /* Storyboards */,
 				19D8C5242B650BD800C5FE43 /* Resources */,
 				19B1EC8E2B6167FB0065BC56 /* Info.plist */,
@@ -152,6 +172,7 @@
 		19D8C5242B650BD800C5FE43 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				19D8C5442B65238800C5FE43 /* Config Files */,
 				19B1EC892B6167FB0065BC56 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -169,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				19D8C5272B650D1E00C5FE43 /* HTTPUtility.swift */,
+				19D8C5382B6511B100C5FE43 /* JokesService.swift */,
 				19D8C5352B650FDF00C5FE43 /* APIPath.swift */,
 			);
 			path = Repository;
@@ -177,6 +199,7 @@
 		19D8C5292B650D4000C5FE43 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				19D8C53C2B65128300C5FE43 /* Constants */,
 				19D8C5322B650E5000C5FE43 /* Extensions */,
 				19D8C52D2B650D7300C5FE43 /* Localization Files */,
 				19D8C52C2B650D6A00C5FE43 /* Enums */,
@@ -207,6 +230,55 @@
 				19D8C5332B650E6700C5FE43 /* Extension+String.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		19D8C5372B65119400C5FE43 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				19D8C53A2B6511E900C5FE43 /* JokesServiceProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		19D8C53C2B65128300C5FE43 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				19D8C53D2B65129B00C5FE43 /* Constants.swift */,
+				19D8C5422B65235300C5FE43 /* Util.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		19D8C53F2B65159300C5FE43 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				19D8C5402B6515AB00C5FE43 /* Jokes.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		19D8C5442B65238800C5FE43 /* Config Files */ = {
+			isa = PBXGroup;
+			children = (
+				19D8C5452B6523AD00C5FE43 /* KeyConfig.plist */,
+			);
+			path = "Config Files";
+			sourceTree = "<group>";
+		};
+		19D8C5472B65257000C5FE43 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				19D8C5482B65258800C5FE43 /* JokesViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		19D8C54A2B6542AB00C5FE43 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				19D8C54B2B6542D300C5FE43 /* JokesCellView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,6 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19B1EC8D2B6167FB0065BC56 /* LaunchScreen.storyboard in Resources */,
+				19D8C5462B6523AD00C5FE43 /* KeyConfig.plist in Resources */,
 				19D8C52F2B650DDA00C5FE43 /* Localizable.strings in Resources */,
 				19B1EC8A2B6167FB0065BC56 /* Assets.xcassets in Resources */,
 				19B1EC882B6167F60065BC56 /* Main.storyboard in Resources */,
@@ -341,13 +414,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19D8C54D2B6542D300C5FE43 /* JokesCellView.swift in Sources */,
 				19D8C5282B650D1E00C5FE43 /* HTTPUtility.swift in Sources */,
+				19D8C53E2B65129B00C5FE43 /* Constants.swift in Sources */,
 				19D8C5342B650E6700C5FE43 /* Extension+String.swift in Sources */,
 				19B1EC852B6167F60065BC56 /* JokesViewController.swift in Sources */,
 				19B1EC812B6167F60065BC56 /* AppDelegate.swift in Sources */,
 				19B1EC832B6167F60065BC56 /* SceneDelegate.swift in Sources */,
+				19D8C5392B6511B100C5FE43 /* JokesService.swift in Sources */,
+				19D8C5432B65235300C5FE43 /* Util.swift in Sources */,
 				19D8C5312B650E1800C5FE43 /* Localaization.swift in Sources */,
+				19D8C5492B65258800C5FE43 /* JokesViewModel.swift in Sources */,
 				19D8C52B2B650D4E00C5FE43 /* NetworkError.swift in Sources */,
+				19D8C53B2B6511E900C5FE43 /* JokesServiceProtocol.swift in Sources */,
+				19D8C5412B6515AB00C5FE43 /* Jokes.swift in Sources */,
 				19D8C5362B650FDF00C5FE43 /* APIPath.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,7 +10,7 @@ import Foundation
 enum NetworkError: String, Error {
     
     case invalidData, invalidResponse, unableToComplete
-    case invalidAppID, invalidBase, resourceNotFound
+    case invalidApiID, invalidBase, resourceNotFound
     case rateLimit, accessRestricted
     case invalidURL
    
@@ -22,8 +22,8 @@ enum NetworkError: String, Error {
             return Localaization.NetworkErrorMessage.invalidResponse
         case .unableToComplete:
             return Localaization.NetworkErrorMessage.unableToComplete
-        case .invalidAppID:
-            return Localaization.NetworkErrorMessage.invalidAppID
+        case .invalidApiID:
+            return Localaization.NetworkErrorMessage.invalidApiID
         case .invalidBase:
             return Localaization.NetworkErrorMessage.invalidBase
         case .accessRestricted:

@@ -10,5 +10,5 @@ import Foundation
 
 internal struct APIPath {
     
-    static let jokes = "https://api.api-ninjas.com/v1/jokes?limit=50"
+    static let endPoint = "jokes?limit=\(Constants.limit)"
 }

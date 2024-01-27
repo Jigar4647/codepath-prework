@@ -11,7 +11,7 @@
 "invalid_data" = "The data was received from the server is invalid. Please try again";
 "invalid_response" = "Invalid response from the server. Please try again";
 "unable_to_complete" = "Unable to complete your request. Please check your internet connection";
-"invalid_app_id" = "Missing API Key.";
+"invalid_api_id" = "Missing API Key.";
 "invalid_base" = "Client requested rates for an unsupported base currency";
 "rate_limit" = "Access restricted for repeated over-use";
 "access_restricted" = "Client doesn’t have permission to access requested route/feature";

@@ -24,8 +24,8 @@ internal struct Localaization {
             return "unable_to_complete".getLocalizeString()
         }
         
-        static var invalidAppID: String {
-            return "invalid_app_id".getLocalizeString()
+        static var invalidApiID: String {
+            return "invalid_api_id".getLocalizeString()
         }
         
         static var invalidBase: String {
