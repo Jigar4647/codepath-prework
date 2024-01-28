@@ -10,9 +10,9 @@ import Foundation
 
 struct JokesService: JokesServiceProtocol {
     
-    func fetchJokes(completionHandler: @escaping resultCompletion) {
+    func fetchJokes(limit: Int, completionHandler: @escaping resultCompletion) {
         
-        let urlString = Constants.baseURL + APIPath.endPoint
+        let urlString = Constants.baseURL + String(format: APIPath.endPoint, limit)
         
         guard let url = URL(string: urlString) else {
             completionHandler(.failure(.invalidURL))

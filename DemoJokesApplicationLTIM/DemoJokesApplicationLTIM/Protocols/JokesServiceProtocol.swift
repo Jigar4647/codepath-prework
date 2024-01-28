@@ -11,5 +11,5 @@ typealias resultCompletion = ((Result<Jokes, NetworkError>) -> Void)
 
 protocol JokesServiceProtocol {
     
-    func fetchJokes(completionHandler: @escaping resultCompletion)
+    func fetchJokes(limit: Int, completionHandler: @escaping resultCompletion)
 }

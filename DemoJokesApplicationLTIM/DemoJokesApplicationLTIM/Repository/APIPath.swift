@@ -10,5 +10,5 @@ import Foundation
 
 internal struct APIPath {
     
-    static let endPoint = "jokes?limit=\(Constants.limit)"
+    static let endPoint = "jokes?limit=%d"
 }

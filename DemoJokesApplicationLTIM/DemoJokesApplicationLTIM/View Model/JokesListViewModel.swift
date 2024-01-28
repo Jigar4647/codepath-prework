@@ -37,18 +37,16 @@ extension JokesListViewModel {
 
 // MARK: API calling
 extension JokesListViewModel {
-    typealias completionHandler = ((Result<Bool, NetworkError>) -> Void)
+    typealias completionHandler = (Jokes) -> Void
 
-    func fetchJokesFromAPI(completionHandler: @escaping completionHandler) {
+    func fetchJokesFromAPI(limit: Int, completionHandler: @escaping completionHandler) {
         
-        service.fetchJokes { [weak self] result in
-            guard let self = self else { return }
+        service.fetchJokes(limit: limit) { result in
             switch result {
             case .success(let jokesArray):
-                self.jokes = jokesArray
-                completionHandler(.success(true))
+                completionHandler(jokesArray)
             case .failure(let error):
-                completionHandler(.failure(error))
+                print("Error : \(error.localizedDescription)")
             }
         }
     }

@@ -11,12 +11,15 @@ class JokesViewController: UITableViewController {
 
     // Private properties
     private var jokesListViewModel: JokesListViewModel!
+    
     // Diplaying the activity indicator
     let activityIndicator: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView(style: .medium)
         indicator.translatesAutoresizingMaskIntoConstraints = false
         return indicator
     }()
+    
+    var isLoading = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,23 +28,26 @@ class JokesViewController: UITableViewController {
         
         // Initialize viewModel
         jokesListViewModel = JokesListViewModel(serviceProtocol: JokesService())
-        renderingData()
+        fetchJokesInBatches()
     }
     
-    func renderingData() {
+    func fetchJokesInBatches() {
+        isLoading = true
         // Start animating the activity indicator
         activityIndicator.startAnimating()
         
-        jokesListViewModel.fetchJokesFromAPI { [weak self] result in
+        jokesListViewModel.fetchJokesFromAPI(limit: Constants.limit) { [weak self] newJokes in
             guard let self = self else { return }
-            switch result {
-            case .success( _):
-                self.tableView.reloadData()
-                self.stopAnimating()
-            case .failure(let error):
-                print(error)
-                self.stopAnimating()
+            
+            if newJokes.isEmpty {
+                // No more jokes to load
+                self.isLoading = false
+                return
             }
+            self.isLoading = false
+            self.jokesListViewModel.jokes.append(contentsOf: newJokes)
+            self.tableView.reloadData()
+            self.stopAnimating()
         }
     }
     
@@ -84,6 +90,17 @@ extension JokesViewController {
         cell.configureCell(objJoke)
         
         return cell
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension JokesViewController {
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == self.jokesListViewModel.jokes.count - 1 && !isLoading {
+            // Load more jokes when the last cell is about to be displayed
+            fetchJokesInBatches()
+        }
     }
 }
 
