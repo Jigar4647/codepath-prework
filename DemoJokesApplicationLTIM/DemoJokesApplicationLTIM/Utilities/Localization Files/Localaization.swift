@@ -28,20 +28,8 @@ internal struct Localaization {
             return "invalid_api_id".getLocalizeString()
         }
         
-        static var invalidBase: String {
-            return "invalid_base".getLocalizeString()
-        }
-        
-        static var rateLimit: String {
-            return "rate_limit".getLocalizeString()
-        }
-        
         static var notAllowed: String {
             return "access_restricted".getLocalizeString()
-        }
-        
-        static var resourceNotFound: String {
-            return "resource_not_found".getLocalizeString()
         }
         
         static var invalidURL: String {

@@ -46,14 +46,10 @@ class HTTPUtility {
                     } else {
                         completionHandler(.failure(.invalidData))
                     }
-                case 400:
-                    completionHandler(.failure(.invalidBase))
                 case 401:
                     completionHandler(.failure(.invalidApiID))
                 case 403:
                     completionHandler(.failure(.accessRestricted))
-                case 429:
-                    completionHandler(.failure(.rateLimit))
                 default:
                     completionHandler(.failure(.invalidResponse))
                 }

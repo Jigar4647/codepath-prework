@@ -16,6 +16,18 @@ class JokesListViewModel {
     init(serviceProtocol: JokesServiceProtocol) {
         self.service = serviceProtocol
     }
+    
+    func fetchJokesFromAPI(limit: Int, completionHandler: @escaping (Jokes) -> Void) {
+        
+        service.fetchJokes(limit: limit) { result in
+            switch result {
+            case .success(let jokesArray):
+                completionHandler(jokesArray)
+            case .failure(let error):
+                print("Error : \(error.localizedDescription)")
+            }
+        }
+    }
 }
 
 // MARK: - Data Preparation
@@ -38,17 +50,7 @@ extension JokesListViewModel {
 // MARK: API calling
 extension JokesListViewModel {
 
-    func fetchJokesFromAPI(limit: Int, completionHandler: @escaping (Jokes) -> Void) {
-        
-        service.fetchJokes(limit: limit) { result in
-            switch result {
-            case .success(let jokesArray):
-                completionHandler(jokesArray)
-            case .failure(let error):
-                print("Error : \(error.localizedDescription)")
-            }
-        }
-    }
+    
 }
 
 struct JokesViewModel {

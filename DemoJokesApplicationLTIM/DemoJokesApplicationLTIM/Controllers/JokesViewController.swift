@@ -10,7 +10,7 @@ import UIKit
 class JokesViewController: UITableViewController {
 
     // Private properties
-    private var jokesListViewModel: JokesListViewModel!
+    var jokesListViewModel: JokesListViewModel!
     
     // Diplaying the activity indicator
     let activityIndicator: UIActivityIndicatorView = {
@@ -20,6 +20,7 @@ class JokesViewController: UITableViewController {
     }()
     
     var isLoading = false
+    var batchLimit = 50
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +37,7 @@ class JokesViewController: UITableViewController {
         // Start animating the activity indicator
         activityIndicator.startAnimating()
         
-        jokesListViewModel.fetchJokesFromAPI(limit: Constants.limit) { [weak self] newJokes in
+        jokesListViewModel.fetchJokesFromAPI(limit: batchLimit) { [weak self] newJokes in
             guard let self = self else { return }
             
             if newJokes.isEmpty {
