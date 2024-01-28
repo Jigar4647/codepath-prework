@@ -7,7 +7,7 @@
 
 import Foundation
 
-class JokesViewModel {
+class JokesListViewModel {
     
     var jokes: Jokes = []
 
@@ -19,7 +19,7 @@ class JokesViewModel {
 }
 
 // MARK: - Data Preparation
-extension JokesViewModel {
+extension JokesListViewModel {
     
     var numberOfSections: Int {
         return 1
@@ -29,13 +29,14 @@ extension JokesViewModel {
         return self.jokes.count
     }
     
-    func getJokeBy(_ index: Int) -> Joke? {
-        return index < jokes.count ? jokes[index] : nil
+    func jokeAtIndex(_ index: Int) -> JokesViewModel {
+        let joke = self.jokes[index]
+        return JokesViewModel(joke: joke)
     }
 }
 
 // MARK: API calling
-extension JokesViewModel {
+extension JokesListViewModel {
     typealias completionHandler = ((Result<Bool, NetworkError>) -> Void)
 
     func fetchJokesFromAPI(completionHandler: @escaping completionHandler) {
@@ -50,5 +51,17 @@ extension JokesViewModel {
                 completionHandler(.failure(error))
             }
         }
+    }
+}
+
+struct JokesViewModel {
+    private let objJoke: Joke
+    
+    init(joke: Joke) {
+        self.objJoke = joke
+    }
+    
+    var jokeDescription: String {
+        return objJoke.joke
     }
 }

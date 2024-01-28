@@ -22,7 +22,7 @@ class JokesCellView: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configureCell(_ objJoke: Joke) {
-        lblJoke.text = objJoke.joke
+    func configureCell(_ jokesVM: JokesViewModel) {
+        lblJoke.text = jokesVM.jokeDescription
     }
 }
