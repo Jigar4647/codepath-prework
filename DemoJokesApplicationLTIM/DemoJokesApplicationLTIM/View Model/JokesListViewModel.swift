@@ -47,12 +47,6 @@ extension JokesListViewModel {
     }
 }
 
-// MARK: API calling
-extension JokesListViewModel {
-
-    
-}
-
 struct JokesViewModel {
     private let objJoke: Joke
     
