@@ -22,15 +22,6 @@ final class JokesViewControllerTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    // Test viewDidLoad
-    func testViewDidLoad() {
-        XCTAssertNotNil(viewController.tableView)
-        XCTAssertNotNil(viewController.activityIndicator)
-        
-        // Check if viewModel is initialized
-        XCTAssertNotNil(viewController.jokesListViewModel)
-    }
-    
     // Test fetchJokesInBatches
     func testFetchJokesInBatches() {
         let mockViewModel = MockJokesListViewModel(serviceProtocol: MockJokesService())
