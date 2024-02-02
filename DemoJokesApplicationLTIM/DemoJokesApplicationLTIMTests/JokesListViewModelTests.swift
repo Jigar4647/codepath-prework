@@ -50,7 +50,7 @@ final class JokesListViewModelTests: XCTestCase {
     }
     
     // Test fetching jokes from API
-    func testFetchJokesFromAPI() {
+    func testFetchJokesFromAPISuccess() {
         let expectation = XCTestExpectation(description: "Fetching jokes from API")
         
         viewModel.fetchJokesFromAPI(limit: 5) { jokes in
@@ -60,6 +60,18 @@ final class JokesListViewModelTests: XCTestCase {
             XCTAssertEqual(jokes[2].joke, "Mock Joke 3")
             XCTAssertEqual(jokes[3].joke, "Mock Joke 4")
             XCTAssertEqual(jokes[4].joke, "Mock Joke 5")
+            expectation.fulfill()
+        }
+        
+        wait(for: [expectation], timeout: 5.0)
+    }
+    
+    func testFetchJokesFromAPIFailure() {
+        mockService.shouldReturnError = true
+        let expectation = XCTestExpectation(description: "Fetching jokes from API")
+        
+        viewModel.fetchJokesFromAPI(limit: 5) { jokes in
+            XCTAssertEqual(jokes.count, 0)
             expectation.fulfill()
         }
         

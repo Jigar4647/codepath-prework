@@ -11,11 +11,17 @@ import XCTest
 final class MockJokesListViewModel: JokesListViewModel {
 
     var fetchJokesExpectation: XCTestExpectation?
+    var jokeAtIndexCalled = false
 
     override func fetchJokesFromAPI(limit: Int, completionHandler: @escaping (Jokes) -> Void) {
         super.fetchJokesFromAPI(limit: limit) { jokes in
             completionHandler(jokes)
             self.fetchJokesExpectation?.fulfill()
         }
+    }
+    
+    override func jokeAtIndex(_ index: Int) -> JokesViewModel {
+        jokeAtIndexCalled = true
+        return super.jokeAtIndex(index)
     }
 }

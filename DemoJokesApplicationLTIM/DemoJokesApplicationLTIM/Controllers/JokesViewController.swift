@@ -38,17 +38,15 @@ class JokesViewController: UITableViewController {
         activityIndicator.startAnimating()
         
         jokesListViewModel.fetchJokesFromAPI(limit: batchLimit) { [weak self] newJokes in
-            guard let self = self else { return }
-            
             if newJokes.isEmpty {
                 // No more jokes to load
-                self.isLoading = false
+                self?.isLoading = false
                 return
             }
-            self.isLoading = false
-            self.jokesListViewModel.jokes.append(contentsOf: newJokes)
-            self.tableView.reloadData()
-            self.stopAnimating()
+            self?.isLoading = false
+            self?.jokesListViewModel.jokes.append(contentsOf: newJokes)
+            self?.tableView.reloadData()
+            self?.stopAnimating()
         }
     }
     

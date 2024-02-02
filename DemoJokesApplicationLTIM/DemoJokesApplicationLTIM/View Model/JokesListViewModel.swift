@@ -25,14 +25,12 @@ class JokesListViewModel {
                 completionHandler(jokesArray)
             case .failure(let error):
                 print("Error : \(error.localizedDescription)")
+                completionHandler([])
             }
         }
     }
-}
-
-// MARK: - Data Preparation
-extension JokesListViewModel {
     
+    // MARK: - Data Preparation
     var numberOfSections: Int {
         return 1
     }

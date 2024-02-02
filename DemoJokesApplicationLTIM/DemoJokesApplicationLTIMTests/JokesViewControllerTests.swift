@@ -55,4 +55,49 @@ final class JokesViewControllerTests: XCTestCase {
         XCTAssertFalse(viewController.isLoading)
         XCTAssertEqual(viewController.jokesListViewModel.jokes.count, 0)
     }
+    
+    // Test willDisplay
+    func testWillDisplay() {
+        let mockViewModel = MockJokesListViewModel(serviceProtocol: MockJokesService())
+        viewController.jokesListViewModel = mockViewModel
+        viewController.isLoading = false
+        
+        mockViewModel.jokes = [
+            Joke(joke: "Mock Joke 1"),
+            Joke(joke: "Mock Joke 2"),
+            Joke(joke: "Mock Joke 3"),
+            Joke(joke: "Mock Joke 4"),
+            Joke(joke: "Mock Joke 5")
+        ]
+        
+        let mockTableView = MockTableView()
+        viewController.tableView = mockTableView
+        
+        // Register the cell identifier
+        mockTableView.register(JokesCellView.self, forCellReuseIdentifier: "Cell")
+        
+        let mockIndexPath = IndexPath(row: 4, section: 0)
+        viewController.tableView(viewController.tableView, willDisplay: UITableViewCell(), forRowAt: mockIndexPath)
+        
+        XCTAssertFalse(viewController.isLoading)
+    }
+}
+
+// Mock UITableView for testing
+class MockTableView: UITableView {
+    var dequeueReusableCellCalled = false
+    
+    override func dequeueReusableCell(withIdentifier identifier: String, for indexPath: IndexPath) -> UITableViewCell {
+        dequeueReusableCellCalled = true
+        return super.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
+    }
+}
+
+class MockJokesCellView: JokesCellView {
+    var configureCellCalled = false
+    
+    override func configureCell(_ jokeViewModel: JokesViewModel) {
+        configureCellCalled = true
+        super.configureCell(jokeViewModel)
+    }
 }
